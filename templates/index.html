@@ -1,0 +1,39 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Lastfm Web Crawler
+{% endblock %}
+
+{% block main %}
+        <h1>Lastfm Web Crawler</h1>
+
+        <form onsubmit= "success();" action = "/" method = "post">
+            <input name ="username" placeholder = "Enter your Lastfm username" type = "text">
+            <input name ="songs" placeholder = "Enter playlist size" type = "text">
+            <select name="period">
+              <option value="ALL">All time</option>
+              <option value="LAST_7_DAYS">Last 7 Days</option>
+              <option value="LAST_30_DAYS">Last 30 Days</option>
+              <option value="LAST_90_DAYS">Last 90 Days</option>
+              <option value="LAST_180_DAYS">Last 180 Days</option>
+              <option value="LAST_365_DAYS">Last 365 Days</option>
+            </select>
+            <select name="pc">
+              <option value="T">Include Playcount</option>
+              <option value="F">Do Not Include Playcount</option>
+
+            </select>
+            <select name="filter">
+              <option value="F">Do Not Include Filter</option>
+              <option value="T">Include Filter</option>
+            </select>
+
+
+            <button type = "submit">Submit</button>
+        </form>
+
+        <h2 style= text-align: left> Instructions</h2>
+        <p> In the form type in your Lastfm user name, how many songs you want in your playlist and the time period</p>
+        <p> Then click the 'Tune My Music' link to import the csv into Spotify</p>
+
+{% endblock %}

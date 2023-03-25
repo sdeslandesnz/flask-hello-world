@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <title>{% block title %}{% endblock %}</title>
+        <link href="/static/css/style.css" rel="stylesheet">
+        <script>
+            function success()
+            {
+                alert('Submission Successful!')
+            }
+
+        </script>
+       <nav class="navbar">
+       <ul>
+      <li><a href="/home">HOME</a></li>
+      <li><a href="/news">NEWS</a></li>
+      <li><a href="/contact">CONTACT</a></li>
+      <li><a href="/about">ABOUT</a></li>
+      <li><a href="https://www.tunemymusic.com/CSV-to-Spotify.php#step5" target="_blank">TUNE MY MUSIC</a></li>
+      </ul>
+      </nav>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+
+    <body>
+
+        {% block main %}{% endblock %}
+
+    </body>
+
+<html>
