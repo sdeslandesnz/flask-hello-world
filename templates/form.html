@@ -1,33 +1,56 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>Last.fm to Spotify</title>
-  </head>
-  <body>
-    <h1>Last.fm to Spotify</h1>
-    <form method="post" action="{{ url_for('index') }}">
-      <label for="user_agent">User Agent:</label>
-      <input type="text" id="user_agent" name="user_agent"><br><br>
+{% extends "layout.html" %}
 
-      <label for="limit">Limit:</label>
-      <select id="limit" name="limit">
-        <option value="10">10</option>
-        <option value="20">20</option>
-        <option value="50">50</option>
-        <option value="100">100</option>
-      </select><br><br>
+{% block title %}
+Lastfm Web Crawler
+{% endblock %}
 
-      <label for="period">Period:</label>
-      <select id="period" name="period">
-        <option value="overall">Overall</option>
-        <option value="7day">Last 7 Days</option>
-        <option value="1month">Last Month</option>
-        <option value="3month">Last 3 Months</option>
-        <option value="6month">Last 6 Months</option>
-        <option value="12month">Last 12 Months</option>
-      </select><br><br>
+{% block main %}
+  <div class="container">
+    <h1>Lastfm Web Crawler</h1>
 
-      <input type="submit" value="Create Playlist">
+    <form onsubmit="success();" action="/" method="post">
+      <div class="form-group">
+        <label for="username">Lastfm Username</label>
+        <input name="username" id="username" type="text" class="form-control" placeholder="Enter your Lastfm username">
+      </div>
+
+      <div class="form-group">
+        <label for="songs">Playlist Size</label>
+        <input name="songs" id="songs" type="text" class="form-control" placeholder="Enter playlist size">
+      </div>
+
+      <div class="form-group">
+        <label for="period">Time Period</label>
+        <select name="period" id="period" class="form-control">
+          <option value="overall">All time</option>
+          <option value="7day">Last 7 Days</option>
+          <option value="1month">Last 30 Days</option>
+          <option value="3month">Last 90 Days</option>
+          <option value="6month">Last 180 Days</option>
+          <option value="12month">Last 365 Days</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="pc">Include Playcount</label>
+        <select name="pc" id="pc" class="form-control">
+          <option value="T">Yes</option>
+          <option value="F">No</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="filter">Include Filter</label>
+        <select name="filter" id="filter" class="form-control">
+          <option value="F">No</option>
+          <option value="T">Yes</option>
+        </select>
+      </div>
+
+      <button type="submit" class="btn btn-primary">Submit</button>
     </form>
-  </body>
-</html>
+
+    <h2 class="instructions">Instructions</h2>
+    <p class="instructions">In the form type in your Lastfm username, how many songs you want in your playlist, and the time period. Then click the 'Tune My Music' link to import the CSV into Spotify.</p>
+  </div>
+{% endblock %}
