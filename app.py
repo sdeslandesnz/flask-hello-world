@@ -47,15 +47,15 @@ def index():
         user = sp.me()['id']
 
         # Create a new playlist in the user's account
-        playlist_name = f"{limit} Top Tracks ({period})"
-        playlist_description = f"Top {limit} tracks for {user_agent} in the {period} period"
+        playlist_name = f"{user_agent} 's '{limit} Top Tracks ({period})"
+        playlist_description = f"{user_agent} 's Top {limit} tracks for {user_agent} in the {period} period"
         new_playlist = sp.user_playlist_create(user, playlist_name, public=False, description=playlist_description)
 
         # Add the top tracks to the playlist
         sp.playlist_add_items(new_playlist['id'], track_uris)
 
-        # Render the success page
-        return render_template('success.html', playlist_name=playlist_name, playlist_description=playlist_description)
+        # Render the form page
+        return render_template('form.html')
     else:
         # Render the form page
         return render_template('form.html')
