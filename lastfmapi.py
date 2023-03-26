@@ -1,13 +1,13 @@
 API_KEY = '514456374eb1fd87b2bce60cf9643662'
-#USER_AGENT = input("User? ")
-#limit = int(input("Number of tracks? "))
-#period = input("Period? (overall, 7day, 1month, 3month, 6month, 12month)")
+USER_AGENT = input("User? ")
+limit = int(input("Number of tracks? ")) + 1
+period = input("Period? (overall, 7day, 1month, 3month, 6month, 12month)")
 
-#user (Required) : The user name to fetch top tracks for.
-#period (Optional) : overall | 7day | 1month | 3month | 6month | 12month - The time period over which to retrieve top tracks for.
-#limit (Optional) : The number of results to fetch per page. Defaults to 50.
-#page (Optional) : The page number to fetch. Defaults to first page.
-#api_key (Required) : A Last.fm API key.
+# user (Required) : The user name to fetch top tracks for.
+# period (Optional) : overall | 7day | 1month | 3month | 6month | 12month - The time period over which to retrieve top tracks for.
+# limit (Optional) : The number of results to fetch per page. Defaults to 50.
+# page (Optional) : The page number to fetch. Defaults to first page.
+# api_key (Required) : A Last.fm API key.
 
 import requests
 import json
