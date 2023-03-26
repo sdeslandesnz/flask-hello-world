@@ -9,7 +9,7 @@ from lastfm import lastfm
 from werkzeug.wrappers import Response
 from io import StringIO
 import csv
-import lastfmapi
+import lastfmapi2
 
 
 # Configure application
@@ -28,14 +28,15 @@ def index():
         pc = request.form.get('pc')
         filter = request.form.get('filter')
 
-
-
-        r = lastfm_get({
+        payload = {
             'method': 'user.gettoptracks',
             'user': USER_AGENT,
             'limit': limit,
             'period': period
-        })
+        }
+
+        r = lastfm_get(payload, USER_AGENT)
+            '
         """print(file)"""
 
         data = r.json()
