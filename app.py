@@ -2,7 +2,7 @@ from flask import Flask, render_template, request, redirect, url_for
 import pandas as pd
 import spotipy
 from spotipy.oauth2 import SpotifyOAuth
-import requests 
+import requests
 app = Flask(__name__)
 
 @app.route('/', methods=['GET', 'POST'])
@@ -25,7 +25,15 @@ def index():
                                        'play_count': [int(track['playcount']) for track in data]})
 
         # Create a list of track URIs
-        sp = spotipy.Spotify(auth_manager=SpotifyOAuth(scope="playlist-modify-private"))
+        token = util.prompt_for_user_token(
+        username='1231949457',
+        scope='playlist-modify-private,playlist-modify-public,user-library-read',
+        client_id='98f367dcd59542829594cf72533787d8',
+        client_secret='00e41e05c04b44a88eefa5c3d0a5f188',
+        redirect_uri='http://localhost:8888/callback'
+        )
+
+        sp = spotipy.Spotify(auth=token)
         track_uris = []
         for i, row in top_tracks_df.iterrows():
             result = sp.search(q=f"artist:{row['artist']} track:{row['track']}", type='track')
