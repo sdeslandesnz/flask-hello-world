@@ -22,6 +22,7 @@ def lastfm_get(payload, USER_AGENT):
     url = 'https://ws.audioscrobbler.com/2.0/'
 
     # Add API key and format to the payload
+    API_KEY = '514456374eb1fd87b2bce60cf9643662'
     payload['api_key'] = API_KEY
     payload['format'] = 'json'
 
