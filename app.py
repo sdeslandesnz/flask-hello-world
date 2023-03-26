@@ -22,8 +22,8 @@ def index():
         return render_template('index.html')
     else:
         """print("hello")"""
-        username = request.form.get('username')
-        songs = request.form.get('songs')
+        USER_AGENT = request.form.get('username')
+        limit = request.form.get('songs')
         period = request.form.get('period')
         pc = request.form.get('pc')
         filter = request.form.get('filter')
@@ -32,8 +32,8 @@ def index():
 
         r = lastfm_get({
             'method': 'user.gettoptracks',
-            'user': username,
-            'limit': songs,
+            'user': USER_AGENT,
+            'limit': limit,
             'period': period
         })
         """print(file)"""
