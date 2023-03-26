@@ -1,47 +1,46 @@
-body
-{
-    background-color: #ca3433;
-    text-align: center;
-    color: white;
+body {
+  background-color: red;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.container {
+  width: 60%;
+  margin: auto;
+  padding: 30px;
+  background-color: white;
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
 }
 
 h1 {
-
-  background-color:#A52A2A;
-  margin-top: 0px;
-   margin-left: -10px;
-  margin-right: -10px;
-  font: sans-serif;
-}
-
-h2, p {
-    text-align: left;
-}
-
-ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  background-color: #000;
-  margin-top: -10px;
-  margin-left: -10px;
-  margin-right: -10px;
-}
-
-li {
-  float: left;
-}
-
-li a {
-  display: block;
-  color: white;
   text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
+  font-size: 36px;
+  margin-bottom: 30px;
 }
 
-/* Change the link color to #111 (black) on hover */
-li a:hover {
-  background-color: #111;
+.form-group {
+  margin-bottom: 20px;
 }
+
+label {
+  font-size: 20px;
+}
+
+.form-control {
+  width: 100%;
+  font-size: 16px;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+select.form-control {
+  height: 40px;
+}
+
+.btn-primary {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10
