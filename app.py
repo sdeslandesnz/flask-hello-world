@@ -40,8 +40,8 @@ def index():
             result = sp.search(q=f"artist:{row['artist']} track:{row['track']}", type='track')
             if result['tracks']['items']:
                 track_uris.append(result['tracks']['items'][0]['uri'])
-            else:
-                track_uris.append('')
+            # else:
+            #     track_uris.append('')
 
         # Get the user's Spotify username
         user = sp.me()['id']
