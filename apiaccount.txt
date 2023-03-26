@@ -1,0 +1,6 @@
+Here are the details of your new API account.
+
+Application name	Playcounter
+API key	514456374eb1fd87b2bce60cf9643662
+Shared secret	6a70631febf8f0fe8122ef46bc85eb2b
+Registered to	Des321
