@@ -2,7 +2,7 @@ from flask import Flask, render_template, request, redirect, url_for
 import pandas as pd
 import spotipy
 from spotipy.oauth2 import SpotifyOAuth
-
+import requests 
 app = Flask(__name__)
 
 @app.route('/', methods=['GET', 'POST'])
