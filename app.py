@@ -36,7 +36,7 @@ def index():
         }
 
         r = lastfm_get(payload, USER_AGENT)
-            '
+            
         """print(file)"""
 
         data = r.json()
