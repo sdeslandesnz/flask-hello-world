@@ -12,9 +12,10 @@ def index():
         user_agent = request.form['user_agent']
         limit = request.form['limit']
         period = request.form['period']
+        YOUR_API_KEY = '514456374eb1fd87b2bce60cf9643662'
 
         # Query the Last.fm API for the user's top tracks
-        url = f'http://ws.audioscrobbler.com/2.0/?method=user.gettoptracks&user={user_agent}&api_key=YOUR_API_KEY&format=json&limit={limit}&period={period}'
+        url = f'http://ws.audioscrobbler.com/2.0/?method=user.gettoptracks&user={user_agent}&api_key={YOUR_API_KEY}&format=json&limit={limit}&period={period}'
         response = requests.get(url)
         data = response.json()['toptracks']['track']
 
